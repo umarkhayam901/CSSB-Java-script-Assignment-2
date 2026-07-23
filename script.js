@@ -1,54 +1,89 @@
-/*Task 1: Basic Math & Type Adjustments (Variables & Conversion)
-Create a variable with a string number using let (for example: "50" ).
-Convert this string into a real number using type conversion.
-Add 10 to it using the += operator, and then apply a unary increment ( ++ ) to add 1 more.
-Print the final result to the console.*/
+/*Task 1: The Modern Arrow Calculator (Functions & Operators)
+Write a modern JavaScript arrow function named calculateTotal .
+The function must accept three numerical arguments: price , taxPercentage , and
+discountAmount .
+Calculate the final absolute price value by adding the calculated tax price value and subtracting the
+static discount value.
+Return the absolute numeric result and print it using an informative console.log() template
+message. */
+const calculateTotal = (price, taxPercentage, discountAmount) => {
+  let tax = (price * taxPercentage) / 100;
+  let total = price + tax - discountAmount;
+  return total;
+};
 
-let num = "50";
-num = Number(num);
-num += 10;
-num++;
+let finalPrice = calculateTotal(1000, 10, 50);
 
-console.log(num);
+console.log("Final Price is: " + finalPrice);
 
-/*Task 2: Variable Declarations & Truthy Check (const & Truthy/Falsy)
-Create a fixed variable for a username using const (e.g., "Farhan" ).
-Use an if else statement to check if the username exists (evaluating if it is a truthy value).
-If it is truthy, print "Welcome, [username]!". If it is empty (falsy), print "Please provide a username."*/
 
-const username = "Farhan";
 
-if (username) {
-  console.log(`Welcome, ${username}!`);
+/*Task 2: Strict Access Guards (Logical Operators & Truthy Checks)
+ Create three access flag variables: isLoggedIn (boolean),
+  hasActiveSubscription (boolean), 
+  and guestToken (string containing a value or empty "" ).
+   Build an if/else statement using short-circuit logical operators ( && and || ) to approve access 
+   if: The user is both logged in AND has an active subscription,
+    OR They possess a valid truthy guestToken .Print "Access Granted!" 
+if the checks pass; otherwise, print "Access Denied!" . */
+
+let isLoggedIn = true;
+let hasActiveSubscription = true;
+let guestToken = "";
+
+if ((isLoggedIn && hasActiveSubscription) || guestToken) {
+  console.log("Access Granted!");
 } else {
-  console.log("Please provide a username.");
+  console.log("Access Denied!");
 }
 
-/*Task 3: Simple Grading System (Control Flow)
-Create a variable for a student score (e.g., 85).
-Use an if / else if / else structure to check the score:
-If the score is 90 or above, print "Grade: A".
-If the score is 75 or above, print "Grade: B".
-Otherwise, print "Grade: C". */
 
-let score = 85;
+/*Task 3: Day Planner Switchboard (Control Flow Switch Case)
+Declare a tracking variable called dayOfWeek containing a day name string (e.g., "Monday" ).
+Construct a standard switch/case control structure to evaluate the value:
+For "Monday" or "Tuesday" , print "Focus: Core JavaScript Study" .
+For "Wednesday" or "Thursday" , print "Focus: Practical Code Labs" .
+For "Friday" , print "Focus: Assignment Submission Review" .
+For weekend days or unknown values, include a default path that prints "Rest & Recovery
+Day" . */
 
-if (score >= 90) {
-  console.log("Grade: A");
-} else if (score >= 75) {
-  console.log("Grade: B");
-} else {
-  console.log("Grade: C");
+let dayOfWeek = "Monday";
+
+switch (dayOfWeek) {
+  case "Monday":
+  case "Tuesday":
+    console.log("Focus: Core JavaScript Study");
+    break;
+
+  case "Wednesday":
+  case "Thursday":
+    console.log("Focus: Practical Code Labs");
+    break;
+
+  case "Friday":
+    console.log("Focus: Assignment Submission Review");
+    break;
+
+  default:
+    console.log("Rest & Recovery Day");
 }
 
-/*Task 4: Simple Number Multiplier (Loops)
-Create a starting base variable using let (e.g., 5).
-Use a simple for loop or while loop to print the results of multiplying that base number by 1, 2, 3, 4,
-and 5.
-Print each result to the console (e.g., "5 multiplied by 2 is 10"). */
 
-let value = 5;
 
-for (let i = 1; i <= 5; i++) {
-  console.log(value + " multiplied by " + i + " is " + (value * i));
+/*Task 4: Selective Array Scanner (Loops & Modulo Operator)
+Create an array containing ten numerical integers (e.g.,
+[12, 45, 7, 22, 19, 88, 3, 50, 41, 10] ).
+Use a standard for loop to iterate completely through every number in the array.
+Inside the loop body, use an if statement combined with the modulo operator ( % ) to check if the
+current number is even.
+Print only the even values directly to the console (e.g., "Discovered even number: 12" ). */
+
+
+
+let numbers = [12, 45, 7, 22, 19, 88, 3, 50, 41, 10];
+
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] % 2 === 0) {
+    console.log("Discovered even number: " + numbers[i]);
+  }
 }
